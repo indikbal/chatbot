@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acme: demo host site (dev)</title>
+    <style>
+      /* Deliberately aggressive host styles to prove the widget is isolated */
+      * { box-sizing: content-box; }
+      body { margin: 0; font-family: Georgia, serif; color: #1c1917; background: #fafaf9; }
+      button, textarea { font: 12px monospace !important; }
+      header { padding: 24px 8vw; display: flex; justify-content: space-between; }
+      main { padding: 8vh 8vw; max-width: 760px; }
+      h1 { font-size: clamp(36px, 6vw, 64px); line-height: 1.05; margin: 0 0 16px; }
+      p { font-size: 18px; line-height: 1.6; color: #57534e; }
+      .cta { display: inline-block; background: #1c1917; color: #fff; padding: 14px 26px; border-radius: 8px; text-decoration: none; }
+    </style>
+  </head>
+  <body>
+    <header><strong>Acme</strong><nav>Pricing · Docs · Contact</nav></header>
+    <main>
+      <h1>A landing page that is not ours.</h1>
+      <p>This stands in for any client website. The chat bubble in the corner is injected by a single script tag and is style-isolated via Shadow DOM, even though this page restyles every button and textarea.</p>
+      <a class="cta" href="#">Get started</a>
+    </main>
+    <script type="module" src="/src/main.tsx" data-agent-chat></script>
+  </body>
+</html>

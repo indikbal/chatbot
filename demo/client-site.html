@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client site: plug-and-play demo</title>
+    <style>
+      body { margin: 0; font-family: system-ui, sans-serif; background: #0f172a; color: #e2e8f0; display: grid; min-height: 100vh; place-items: center; text-align: center; }
+      code { background: #1e293b; padding: 2px 8px; border-radius: 6px; }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>🌿 Greenleaf Store</h1>
+      <p>Built output test: run <code>npm run build</code>, then open this file via <code>npm run preview</code>.</p>
+    </div>
+
+    <!-- The entire integration: one tag. -->
+    <script
+      src="../dist/agent-chat.js"
+      data-title="Leafy"
+      data-subtitle="Greenleaf support · online"
+      data-color="#2563eb"
+      data-position="left"
+      data-theme="auto"
+      data-teaser="🌱 Need help choosing a plant?"
+      data-suggestions="Shipping time|Refund policy|Talk to a human"
+    ></script>
+  </body>
+</html>

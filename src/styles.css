@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Shadow DOM: `:host` replaces html/body so host-page styles can't leak in or out. */
+:host {
+  all: initial;
+}
