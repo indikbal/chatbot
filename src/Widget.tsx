@@ -64,6 +64,13 @@ export function Widget({ cfg }: { cfg: WidgetConfig }) {
     return () => { clearTimeout(t); window.removeEventListener("keydown", esc); };
   }, [open, key, scrollDown]);
 
+  // When the panel closes, its bubbles unmount. Mark every message as already
+  // seen so reopening shows the full text instead of re-streaming it.
+  useEffect(() => {
+    if (open) return;
+    setMessages((p) => (p.some((m) => m.fresh) ? p.map((m) => (m.fresh ? { ...m, fresh: false } : m)) : p));
+  }, [open]);
+
   useEffect(scrollDown, [messages.length, typing, scrollDown]);
 
   async function send(raw: string) {
